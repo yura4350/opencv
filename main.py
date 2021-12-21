@@ -10,16 +10,23 @@ hsv_max = np.array([12, 255, 255])
 k = 0
 EPS = 33
 
-fn = 'photos/orange_0.jpg' # путь к файлу с картинкой
 
-img = cv.imread(fn)
+
+
+
+src = cv.imread('orange_0.jpg', cv.IMREAD_UNCHANGED)
+
+scale_percent = 20
+width = int(src.shape[1] * scale_percent / 100)
+height = int(src.shape[0] * scale_percent / 100)
+
+dsize = (width, height)
+
+img = cv.resize(src, dsize, interpolation=cv.INTER_AREA)
+
 
 print(img.shape)
-#cale_percent = 20
-#width = int(img.shape[1] * scale_percent / 100)
-#height = int(img.shape[0] * scale_percent / 100)
-#dsize = (width, height)
-img = img.resize(img, (int(img.shape[1] / 5), int(img.shape[0] / 5)))
+
 
 
 hsv = cv.cvtColor( img, cv.COLOR_BGR2HSV ) # меняем цветовую модель с BGR на HSV
