@@ -4,12 +4,12 @@ import numpy as np
 import cv2
 q = []
 # параметры цветового фильтра
-hsv_min = np.array([12, 100, 200])
-hsv_max = np.array([15, 150, 255])
+hsv_min = np.array([12, 90, 185])
+hsv_max = np.array([16, 255, 255])
 
 k = 0
 EPS = 33
-src = cv2.imread('photos/orange_10.jpg', cv2.IMREAD_UNCHANGED)
+src = cv2.imread('photos/orange_0.jpg', cv2.IMREAD_UNCHANGED)
 
 scale_percent = 20
 width = int(src.shape[1] * scale_percent / 100)
@@ -32,7 +32,7 @@ cv2.imshow('contours', img) # выводим итоговое изображен
 cv2.waitKey(0)
 for i in range(len(contours)):
     #print(cv.contourArea(contours[i]))
-    if cv2.contourArea(contours[i]) > 100:
+    if cv2.contourArea(contours[i]) > 300:
 
         print('Ученик, дневной пансион')
 
@@ -66,7 +66,7 @@ cv2.imshow('contours', img) # выводим итоговое изображен
 cv2.waitKey(0)
 for i in range(len(contours)):
     #print(cv.contourArea(contours[i]))
-    if cv2.contourArea(contours[i]) > 100:
+    if cv2.contourArea(contours[i]) > 300:
 
         print('Учитель')
 
@@ -77,7 +77,7 @@ hsv_max = np.array([110, 175, 255])
 
 k = 0
 EPS = 33
-src = cv2.imread('photos/blue_simple.jpg', cv2.IMREAD_UNCHANGED)
+src = cv2.imread('photos/blue_0.jpg', cv2.IMREAD_UNCHANGED)
 
 scale_percent = 20
 width = int(src.shape[1] * scale_percent / 100)
@@ -100,7 +100,7 @@ cv2.imshow('contours', img) # выводим итоговое изображен
 cv2.waitKey(0)
 for i in range(len(contours)):
     #print(cv.contourArea(contours[i]))
-    if cv2.contourArea(contours[i]) > 100:
+    if cv2.contourArea(contours[i]) > 300:
 
         print('Ученик, недельный пансион')
 
@@ -134,7 +134,7 @@ cv2.imshow('contours', img) # выводим итоговое изображен
 cv2.waitKey(0)
 for i in range(len(contours)):
     #print(cv.contourArea(contours[i]))
-    if cv2.contourArea(contours[i]) > 100:
+    if cv2.contourArea(contours[i]) > 300:
 
         print('Ученик, полный пансион')
 
