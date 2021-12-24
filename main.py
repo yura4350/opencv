@@ -32,9 +32,10 @@ cv2.imshow('contours', img) # выводим итоговое изображен
 cv2.waitKey(0)
 for i in range(len(contours)):
     #print(cv.contourArea(contours[i]))
-    if cv2.contourArea(contours[i]) > 300:
+    if cv2.contourArea(contours[i]) > 100:
 
         print('Ученик, дневной пансион')
+        break
 
 q = []
 # параметры цветового фильтра
@@ -43,7 +44,7 @@ hsv_max = np.array([12, 57, 215])
 
 k = 0
 EPS = 33
-src = cv2.imread('photos/white_1.jpg', cv2.IMREAD_UNCHANGED)
+src = cv2.imread('photos/white_0.jpg', cv2.IMREAD_UNCHANGED)
 
 scale_percent = 20
 width = int(src.shape[1] * scale_percent / 100)
@@ -69,6 +70,7 @@ for i in range(len(contours)):
     if cv2.contourArea(contours[i]) > 300:
 
         print('Учитель')
+        break
 
 q = []
 # параметры цветового фильтра
@@ -100,18 +102,19 @@ cv2.imshow('contours', img) # выводим итоговое изображен
 cv2.waitKey(0)
 for i in range(len(contours)):
     #print(cv.contourArea(contours[i]))
-    if cv2.contourArea(contours[i]) > 300:
+    if cv2.contourArea(contours[i]) > 100:
 
         print('Ученик, недельный пансион')
+        break
 
 q = []
 # параметры цветового фильтра
-hsv_min = np.array([12, 100, 20])
-hsv_max = np.array([15, 255, 255])
+hsv_min = np.array([116, 40, 70])
+hsv_max = np.array([141, 255, 131])
 
 k = 0
 EPS = 33
-src = cv2.imread('photos/purple_0.jpg', cv2.IMREAD_UNCHANGED)
+src = cv2.imread('photos/purple_simple_1.jpg', cv2.IMREAD_UNCHANGED)
 
 scale_percent = 20
 width = int(src.shape[1] * scale_percent / 100)
@@ -134,7 +137,8 @@ cv2.imshow('contours', img) # выводим итоговое изображен
 cv2.waitKey(0)
 for i in range(len(contours)):
     #print(cv.contourArea(contours[i]))
-    if cv2.contourArea(contours[i]) > 300:
+    if cv2.contourArea(contours[i]) > 100:
 
         print('Ученик, полный пансион')
+        break
 
