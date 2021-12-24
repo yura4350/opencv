@@ -9,7 +9,7 @@ hsv_max = np.array([16, 255, 255])
 
 k = 0
 EPS = 33
-src = cv2.imread('photos/orange_0.jpg', cv2.IMREAD_UNCHANGED)
+src = cv2.imread('photos/orange_1.jpg', cv2.IMREAD_UNCHANGED)
 
 scale_percent = 20
 width = int(src.shape[1] * scale_percent / 100)
@@ -38,12 +38,12 @@ for i in range(len(contours)):
 
 q = []
 # параметры цветового фильтра
-hsv_min = np.array([0,30, 120])
-hsv_max = np.array([13, 50, 200])
+hsv_min = np.array([3, 13, 120])
+hsv_max = np.array([12, 57, 215])
 
 k = 0
 EPS = 33
-src = cv2.imread('photos/white_3.jpg', cv2.IMREAD_UNCHANGED)
+src = cv2.imread('photos/white_1.jpg', cv2.IMREAD_UNCHANGED)
 
 scale_percent = 20
 width = int(src.shape[1] * scale_percent / 100)
@@ -137,6 +137,4 @@ for i in range(len(contours)):
     if cv2.contourArea(contours[i]) > 300:
 
         print('Ученик, полный пансион')
-
-
 
